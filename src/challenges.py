@@ -1,5 +1,5 @@
-"""Weekly Coding #5: Skyrail Station Navigator — Trees, Traversals, and BST Basics."""
-# test change
+"""Weekly Coding #5 starter code: Trees, traversals, and BST basics."""
+
 from __future__ import annotations
 
 from typing import Any
@@ -54,7 +54,7 @@ def bst_contains(root: TreeNode | None, target: int) -> bool:
 def bst_insert(root: TreeNode | None, value: int) -> TreeNode:
     """Insert value into the BST and return the root node.
 
-    Duplicate values are ignored.
+    Duplicate values should be ignored.
     """
     if root is None:
         return TreeNode(value)
@@ -62,5 +62,5 @@ def bst_insert(root: TreeNode | None, value: int) -> TreeNode:
         root.left = bst_insert(root.left, value)
     elif value > root.value:
         root.right = bst_insert(root.right, value)
-    # value == root.value → duplicate, skip
+    # value == root.value → duplicate, do nothing
     return root
